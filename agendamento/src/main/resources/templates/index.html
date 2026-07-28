@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Barbearia - Início</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="~{fragments/nav :: nav}"></div>
+
+<div class="container">
+    <div class="hero">
+        <h1>Sistema de Agendamento</h1>
+        <p>Gerencie clientes, serviços e horários da sua barbearia</p>
+    </div>
+
+    <div class="cards">
+        <a th:href="@{/clientes}" class="card">
+            <h2>Clientes</h2>
+            <p>Cadastre e gerencie seus clientes</p>
+        </a>
+        <a th:href="@{/servicos}" class="card">
+            <h2>Serviços</h2>
+            <p>Defina os serviços oferecidos</p>
+        </a>
+        <a th:href="@{/agendamentos}" class="card">
+            <h2>Agendamentos</h2>
+            <p>Marque e organize os horários</p>
+        </a>
+    </div>
+</div>
+</body>
+</html>

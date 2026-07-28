@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendamento</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="~{fragments/nav :: nav}"></div>
+
+<div class="container">
+    <h1>Novo Agendamento</h1>
+
+    <p th:if="${erro}" th:text="${erro}" class="erro"></p>
+
+    <form th:action="@{/agendamentos/salvar}" th:object="${agendamento}" method="post">
+        <input type="hidden" th:field="*{id}">
+
+        <label>Cliente:</label>
+        <select th:field="*{cliente.id}">
+            <option th:each="c : ${clientes}" th:value="${c.id}" th:text="${c.nome}"></option>
+        </select>
+
+        <label>Serviço:</label>
+        <select th:field="*{servico.id}">
+            <option th:each="s : ${servicos}" th:value="${s.id}" th:text="${s.nome}"></option>
+        </select>
+
+        <label>Data e Hora:</label>
+        <input type="datetime-local" th:field="*{dataHora}">
+
+        <button type="submit">Salvar</button>
+        <a th:href="@{/agendamentos}">Cancelar</a>
+    </form>
+</div>
+</body>
+</html>

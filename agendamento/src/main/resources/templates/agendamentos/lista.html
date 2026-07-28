@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendamentos</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="~{fragments/nav :: nav}"></div>
+
+<div class="container">
+    <h1>Agendamentos</h1>
+    <a th:href="@{/agendamentos/novo}" class="btn-novo">Novo Agendamento</a>
+    <table>
+        <tr>
+            <th>Cliente</th>
+            <th>Serviço</th>
+            <th>Data/Hora</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+        <tr th:each="ag : ${agendamentos}">
+            <td th:text="${ag.cliente.nome}"></td>
+            <td th:text="${ag.servico.nome}"></td>
+            <td th:text="${#temporals.format(ag.dataHora, 'dd/MM/yyyy HH:mm')}"></td>
+            <td th:text="${ag.status}"></td>
+            <td>
+                <a th:href="@{/agendamentos/editar/{id}(id=${ag.id})}">Editar</a>
+                <a th:href="@{/agendamentos/excluir/{id}(id=${ag.id})}"
+                   onclick="return confirm('Excluir este agendamento?')">Excluir</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

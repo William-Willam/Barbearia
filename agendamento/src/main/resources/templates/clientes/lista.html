@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="~{fragments/nav :: nav}"></div>
+
+<div class="container">
+    <h1>Clientes</h1>
+    <a th:href="@{/clientes/novo}" class="btn-novo">Novo Cliente</a>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th>Ações</th>
+        </tr>
+        <tr th:each="cliente : ${clientes}">
+            <td th:text="${cliente.nome}"></td>
+            <td th:text="${cliente.telefone}"></td>
+            <td th:text="${cliente.email}"></td>
+            <td>
+                <a th:href="@{/clientes/editar/{id}(id=${cliente.id})}">Editar</a>
+                <a th:href="@{/clientes/excluir/{id}(id=${cliente.id})}"
+                   onclick="return confirm('Excluir este cliente?')">Excluir</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

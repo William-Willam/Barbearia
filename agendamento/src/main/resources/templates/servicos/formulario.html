@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Serviço</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="~{fragments/nav :: nav}"></div>
+
+<div class="container">
+    <h1>Cadastro de Serviço</h1>
+    <form th:action="@{/servicos/salvar}" th:object="${servico}" method="post">
+        <input type="hidden" th:field="*{id}">
+
+        <label>Nome:</label>
+        <input type="text" th:field="*{nome}">
+        <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="erro"></span>
+
+        <label>Duração (minutos):</label>
+        <input type="number" th:field="*{duracaoMinutos}">
+        <span th:if="${#fields.hasErrors('duracaoMinutos')}" th:errors="*{duracaoMinutos}" class="erro"></span>
+
+        <label>Preço:</label>
+        <input type="number" step="0.01" th:field="*{preco}">
+        <span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="erro"></span>
+
+        <button type="submit">Salvar</button>
+        <a th:href="@{/servicos}">Cancelar</a>
+    </form>
+</div>
+</body>
+</html>
