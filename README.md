@@ -91,7 +91,7 @@ src/main/resources/
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/agendamento-barbearia.git
+   git clone https://github.com/William-Willam/agendamento-barbearia.git
    cd agendamento-barbearia
    ```
 
@@ -135,6 +135,13 @@ Se houver sobreposição, o sistema bloqueia o salvamento e exibe uma mensagem i
 - Agenda visual em formato de calendário
 - Notificações por e-mail/SMS para lembrar o cliente do agendamento
 - Relatórios de faturamento por período
+
+
+## Fotos
+<img width="1363" height="683" alt="image" src="https://github.com/user-attachments/assets/6444771e-9f8e-4bdc-8001-aa5cbcba220c" />
+<img width="1365" height="682" alt="image" src="https://github.com/user-attachments/assets/8c3bb04a-d424-4234-8fd8-56a3e9e6ba6c" />
+<img width="1360" height="680" alt="image" src="https://github.com/user-attachments/assets/55f05a1d-be50-4ec8-8747-cb5a706354fe" />
+<img width="1362" height="688" alt="image" src="https://github.com/user-attachments/assets/7e95a5c2-3eb4-4049-9232-3852660a9802" />
 
 ## 📄 Licença
 
